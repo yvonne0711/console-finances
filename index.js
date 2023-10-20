@@ -90,10 +90,9 @@ var finances = [
 console.log("hi");
 // You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
 
-// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
-
 // * The total number of months included in the dataset.
 console.log(finances.length);
+
 // * The net total amount of Profit/Losses over the entire period.
 // sum
 totalAmount = 0;
@@ -106,7 +105,8 @@ console.log(totalAmount);
 
 // * The average of the **changes** in Profit/Losses over the entire period.
 // sum/length = avg
-// changes be feb 2017 671099 - jan 2017 138230, all these changes accumulated
+// changes be feb 2017 671099 - jan 2017 138230, then all these changes accumulated
+
 
 //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
 //   * (`Total/(Number of months - 1)`)
