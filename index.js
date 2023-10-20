@@ -103,10 +103,9 @@ for (var i = 0; i < finances.length; i++) {
 
 console.log("Total: $" + totalAmount);
 
-// * The average of the **changes** in Profit/Losses over the entire period.
-// sum/length = avg
+// The average of the **changes** in Profit/Losses over the entire period.
+// avg == sum/length 
 // changes be feb 2017 671099 - jan 2017 138230, then all these changes accumulated
-// changes being totalMonths - 1
 totalChanges = 0;
 
 for (var i = 1; i < finances.length; i++) {
@@ -114,11 +113,7 @@ for (var i = 1; i < finances.length; i++) {
 }
 
 avgChanges = totalChanges/(totalMonths - 1);
-console.log(avgChanges);
-
-
-//   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
-//   * (`Total/(Number of months - 1)`)
+console.log("Average change: " + Math.round(avgChanges * 100)/100); //Math.round function and *100/100 to get round to two decimal places - help from stack overflow
 
 // * The greatest increase in Profit/Losses (date and amount) over the entire period.
 
