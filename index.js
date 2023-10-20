@@ -87,25 +87,34 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-console.log("hi");
-// You have been given a dataset composed of arrays with two fields, Date and Profit/Losses.
+console.log("Financial Analysis");
+console.log("------------------");
+// The total number of months included in the dataset.
+totalMonths = finances.length;
+console.log("Total Months: " + totalMonths);
 
-// * The total number of months included in the dataset.
-console.log(finances.length);
-
-// * The net total amount of Profit/Losses over the entire period.
+// The net total amount of Profit/Losses over the entire period.
 // sum
-totalAmount = 0;
+totalAmount = 0; //initial counter. need to define the variable first
 
 for (var i = 0; i < finances.length; i++) {
-  totalAmount += finances[i][1];
+  totalAmount += finances[i][1]; //each second element in each subarray
 }
 
-console.log(totalAmount);
+console.log("Total: $" + totalAmount);
 
 // * The average of the **changes** in Profit/Losses over the entire period.
 // sum/length = avg
 // changes be feb 2017 671099 - jan 2017 138230, then all these changes accumulated
+// changes being totalMonths - 1
+totalChanges = 0;
+
+for (var i = 1; i < finances.length; i++) {
+  totalChanges += finances[i][1] - finances[i-1][1];
+}
+
+avgChanges = totalChanges/(totalMonths - 1);
+console.log(avgChanges);
 
 
 //   * You will need to track what the total change in Profit/Losses are from month to month and then find the average.
