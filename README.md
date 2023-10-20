@@ -4,7 +4,7 @@
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Results] (#results)
+  - [Results](#results)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learnt](#what-i-learnt)
