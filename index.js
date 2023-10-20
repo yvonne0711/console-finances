@@ -115,18 +115,38 @@ for (var i = 1; i < finances.length; i++) {
 avgChanges = totalChanges/(totalMonths - 1);
 console.log("Average change: " + Math.round(avgChanges * 100)/100); //Math.round function and *100/100 to get round to two decimal places - help from stack overflow
 
-// * The greatest increase in Profit/Losses (date and amount) over the entire period.
+// The greatest increase in Profit/Losses (date and amount) over the entire period.
+changeinProfit = 0;
+maxProfit = 0;
+maxDate = 0;
+// list = [];
 
-// * The greatest decrease in Profit/Losses (date and amount) over the entire period.
+for (var i = 1; i < finances.length; i++) {
+  changeinProfit = finances[i][1] - finances[i-1][1]; //listing out all the changes without summing them all up this time
+  // console.log(totalChanges);
 
-// When you open your code in the browser your resulting analysis should look similar to the following:
+  // for each iteration, if the total changes is greater than the current stored maximum profit, then thatll be the maximum profit
+  // take the date corresponding to the current max profit throughout the iteration
+  if(changeinProfit > maxProfit) {
+    maxProfit = changeinProfit;
+    maxDate = finances[i][0];
+  }
+}
 
-//   ```text
-//   Financial Analysis 
-//   ----------------
-//   Total Months: 86
-//   Total: $38382578
-//   Average Change: -2315.12
-//   Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
-//   Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
-//   ```
+console.log("Greatest Increase in Profits/Losses: " + maxDate + " $" + maxProfit);
+
+// The greatest decrease in Profit/Losses (date and amount) over the entire period.
+changeinLoss = 0;
+maxLoss = 0;
+maxDate = 0;
+
+for (var i = 1; i < finances.length; i++) {
+  changeinLoss = finances[i][1] - finances[i-1][1]; 
+
+  if(changeinLoss < maxLoss) {
+    maxLoss = changeinLoss;
+    maxDate = finances[i][0];
+  }
+}
+
+console.log("Greatest Decrease in Profits/Losses: " + maxDate + " $" + maxLoss);
